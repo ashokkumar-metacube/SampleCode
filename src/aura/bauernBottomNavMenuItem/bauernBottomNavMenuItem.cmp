@@ -1,0 +1,21 @@
+<aura:component >
+    <aura:attribute name="isActive" type="Boolean" default="{!false}"/>
+    <aura:attribute name="itemNumber" type="Integer" default="0"/>
+    <aura:attribute name="itemLabel" type="String" default=""/>
+    <aura:attribute name="notificationCount" type="Integer" default="0"/>
+    <aura:registerEvent name="bauernBottomNavEvt" type="c:bauernBottomNavEvt"/>
+
+    
+    <div class="{!'slds-size_1-of-6 menu-item ' + (v.isActive ? 'menu-active' : 'menu-inactive')}" onclick="{!c.handleClick}">
+        <span class="{!(v.isActive ?  'menu-icon-' + v.itemNumber +'_active' : 'menu-icon-' + v.itemNumber + '_inactive') + ' slds-align_absolute-center  menu-icon'}"/>
+        
+  
+        
+        <span class="slds-align_absolute-center">
+            <span style="font-size: 50%;">{!v.itemLabel}</span>
+            <aura:if isTrue="{!v.notificationCount!=0}">
+                <span class="badge" data-badge="{!v.notificationCount}"></span>
+            </aura:if>
+        </span>
+    </div>
+</aura:component>

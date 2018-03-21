@@ -1,0 +1,65 @@
+<aura:component >
+    <ltng:require styles="/resource/jqueryUI/jquery-ui.css" 
+                  scripts="{!join(',',$Resource.jqueryUI + '/external/jquery/jquery.js',$Resource.jqueryUI + '/jquery-ui.js')}"
+                  afterScriptsLoaded="{!c.controllerFunction}"
+                  />
+    
+    <aura:attribute name="keywords" type="String" default=""/>
+    <aura:attribute name="viewType" type="String" default="All"/>
+    <aura:attribute name="isFeatured" type="Boolean" default="false" />
+    <aura:attribute name="duration" type="Integer" default="0" />
+    
+    <aura:registerEvent name="keywordsUpdated" type="c:bauernFilterValueEvt" />
+    <aura:registerEvent name="viewTypeUpdated" type="c:bauernFilterValueEvt" />
+    <aura:registerEvent name="isFeauredUpdated" type="c:bauernFilterValueEvt" />
+    <aura:registerEvent name="durationUpdated" type="c:bauernFilterValueEvt" />
+    <aura:registerEvent name="clearFilterClicked" type="c:bauernFilterClickEvt" />
+    <aura:registerEvent name="applyFilterClicked" type="c:bauernFilterClickEvt" />
+    
+    
+    <div class="">
+        <div class="filters-header">
+            <div class="slds-text-align_center slds-p-top_x-small slds-p-bottom_large">
+                <h1 class="filter-heading-text slds-text-heading_medium">FILTER</h1>
+                <h2 class="filter-subheading-text slds-text-heading_small">Podcasts</h2>
+                <lightning:icon iconName="utility:close" class="filter-close-icon slds-p-top_x-small slds-p-right_medium"/>
+            </div>
+        </div>
+        <div class="filters-body">
+            <ui:inputText aura:id="keywords" value="{!v.keywords}"
+                          class="slds-input slds-p-left_large slds-p-vertical_x-small slds-p-right_large slds-input_bare filter-keyword-input"
+                          keyup="{!c.keywordsUpdated}" updateOn="keyup" placeholder="keywords..."/>
+            <div class="slds-grid filter-container slds-m-top_xx-small slds-p-left_large slds-p-vertical_small slds-p-right_large">
+                <p class="categoryType">View</p>
+                <ul class="slds-col_bump-left slds-list_horizontal filter-view-options">
+                    <li onclick="{!c.ViewSelectionClicked}" class="{!v.viewType=='All'?'slds-m-left_large highlightItem':'slds-m-left_large'}">
+                        All
+                    </li>
+                    <li onclick="{!c.ViewSelectionClicked}" class="{!v.viewType=='Unplayed'?'slds-m-left_large highlightItem':'slds-m-left_large'}">
+                        Unplayed
+                    </li>
+                    <li onclick="{!c.ViewSelectionClicked}" class="{!v.viewType=='Played'?'slds-m-left_large highlightItem':'slds-m-left_large'}">
+                        Played
+                    </li>
+                </ul>
+            </div>
+            <div class="slds-grid filter-container slds-m-top_xx-small slds-p-left_large slds-p-vertical_x-small slds-p-right_large">
+                <p class="categoryType slds-p-vertical_x-small">Featured only</p>
+                <lightning:input aura:id="isFeatured" checked="{!v.isFeatured}" name="toggle" label="" type="toggle" class="slds-p-vertical_x-small slds-col_bump-left filter-toggle" onchange="{!c.featuredToggleChanged}"/>
+            </div>
+            <div class="slds-grid filter-container slds-m-top_xx-small slds-p-left_large slds-p-vertical_x-small slds-p-right_large">
+                <p class="categoryType slds-m-vertical_xx-small">Duration</p>
+                <div id="filterRange" class="slds-m-bottom_xx-small slds-m-right_medium slds-col_bump-left slds-p-vertical_xx-small slds-m-top_small"></div>
+                <p class="slds-m-vertical_xx-small slider-value slds-m-left_medium slds-p-vertical_xx-small">&#60;5min</p>
+            </div>
+        </div>
+        <div class="filters-footer slds-grid slds-grid_align-space">
+            <button onclick="{!c.clearFilter}" class=" clear-filter slds-size_1-of-2 slds-p-vertical_small slds-text-heading_small slds-m-around_large slds-button">
+                Clear Filter
+            </button>
+            <button onclick="{!c.applyFilter}" class="apply-filter slds-size_1-of-2 slds-p-vertical_small slds-text-heading_small slds-m-around_large slds-button slds-button_brand">
+                Apply Filter
+            </button>
+        </div>
+    </div>
+</aura:component>

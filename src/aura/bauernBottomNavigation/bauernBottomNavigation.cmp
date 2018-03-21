@@ -1,0 +1,23 @@
+<aura:component >
+    
+    <aura:attribute name="dashboardNotificationCount" type="Integer" default="0"/>
+    <aura:attribute name="alertsNotificationCount" type="Integer" default="0"/>
+    <aura:attribute name="ncNotificationCount" type="Integer" default="0"/>
+    <aura:attribute name="catsNotificationCount" type="Integer" default="0"/>
+    <aura:attribute name="newsNotificationCount" type="Integer" default="0"/>
+    <aura:attribute name="customersNotificationCount" type="Integer" default="0"/>
+    <aura:attribute name="activeButton" type="Integer" default="0"/>
+    <aura:handler event="c:bauernBottomNavEvt" action="{!c.handleNavItemEvent}"/>
+
+    <footer class="bottom-menu slds-size_1-of-1 slds-p-around_small">
+        <div class="slds-grid">
+            <c:bauernBottomNavMenuItem isActive="{!v.activeButton==0}" itemNumber="0" itemLabel="Dashboard" aura:id="navItem"/>
+            <c:bauernBottomNavMenuItem isActive="{!v.activeButton==1}" itemNumber="1" itemLabel="Alerts" notificationCount="4" aura:id="navItem"/>
+            <c:bauernBottomNavMenuItem isActive="{!v.activeButton==2}" itemNumber="2" itemLabel="NC" aura:id="navItem"/>
+            <c:bauernBottomNavMenuItem isActive="{!v.activeButton==3}" itemNumber="3" itemLabel="CATs" aura:id="navItem"/>
+            <c:bauernBottomNavMenuItem isActive="{!v.activeButton==4}" itemNumber="4" itemLabel="News" notificationCount="14" aura:id="navItem"/>
+            <c:bauernBottomNavMenuItem isActive="{!v.activeButton==5}" itemNumber="5" itemLabel="Customers" aura:id="navItem"/>
+        </div>
+        
+    </footer>
+</aura:component>

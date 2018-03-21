@@ -1,0 +1,29 @@
+<aura:component >
+	<!-- ATTRIBUTES -->
+	<aura:attribute name="ModalTitle" type="String" default="System Outage" />
+	<aura:attribute name="ModalBody" type="String" default="Policy Sever" />
+	<aura:attribute name="ModalFooter" type="String" default="2m ago" />
+	<!-- ATTRIBUTES -->
+
+	<!-- COMPONENT BODY -->
+	<div >
+	    <section role="dialog" class="slds-modal slds-slide-down-cancel slds-modal_large">
+	        <div class="slds-modal__container">
+	            <div class="slds-modal__content slds-p-around_medium cModalBody" id="modal-content-id-1">
+	                <lightning:layout horizontalAlign="center" >
+	                	<img src="{!$Resource.Lightning_Red}" />
+	                </lightning:layout>
+	                <div class="slds-text-heading_large slds-text-align_center cModalTitle">{!v.ModalTitle}</div>
+	                <div class="slds-text-heading_large slds-text-align_center cModalBody">{!v.ModalBody}</div>
+	                <div class="slds-text-body_regular slds-text-align_center cModalFooter">{!v.ModalFooter}</div>
+	            </div>
+	            <footer class="slds-modal__footer slds-modal__footer_directional">
+	                <button class="slds-button slds-button_neutral cIgnoreButton">Ignore</button>
+	                <button class="slds-button slds-button_brand">Go To Alert</button>
+	            </footer>
+	        </div>
+	    </section>
+	    <div class="slds-backdrop slds-backdrop_open"></div>
+	</div>
+	<!-- COMPONENT BODY -->
+</aura:component>

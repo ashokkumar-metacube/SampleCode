@@ -1,0 +1,65 @@
+<aura:component >
+    <aura:attribute name="alertItem" type="Object" />
+    
+    <div>
+        <div class="top-bar">
+            <div class="slds-grid">
+                <div class="slds-col slds-size--1-of-12 left">
+                    <button class="slds-button" onclick="{!c.back}">
+                        <lightning:icon iconName="utility:chevronleft" size="normal" />
+                    </button>
+                </div>
+                <div class="slds-col slds-size--10-of-12 center">
+                    <div class="title">ALERT DETAILS</div>
+                    <div class="name">{!v.alertItem.OwnerName}</div>
+                </div>
+                <div class="slds-col slds-size--1-of-12">
+                </div>
+            </div>
+        </div>
+        <div class="subject">
+            {!v.alertItem.Subject}
+        </div>
+        
+        <div class="slds-grid profile">
+            <div class="slds-col slds-no-flex image">
+                <lightning:icon iconName="utility:user" size="normal" />
+            </div>
+            <div class="slds-col info">
+                <div class="name">{!v.alertItem.OwnerName}</div>
+                <div class="account-number">{!v.alertItem.AccountNumber}</div>
+            </div>
+        </div>
+        
+        <div class="slds-grid detail action-required">
+            <div class="slds-col">Action Required</div>
+            <div class="slds-col description">{!v.alertItem.Subject}</div>
+        </div>
+        <div class="slds-grid detail account-number">
+            <div class="slds-col">Account Number</div>
+            <div class="slds-col description">{!v.alertItem.AccountNumber}</div>
+        </div>
+        <div class="slds-grid detail balance-due">
+            <div class="slds-col">Balance Due</div>
+            <div class="slds-col description">${!v.alertItem.BalanceDue}</div>
+        </div>
+        <div class="slds-grid detail due-date">
+            <div class="slds-col">Due Date</div>
+            <div class="slds-col description">{!v.alertItem.DueDate}</div>
+        </div>
+              
+        <div class="slds-grid controls">
+            <div class="slds-col slds-text-align--right">
+                <button class="slds-button">
+                    <lightning:icon iconName="action:email" size="normal" />
+                </button>
+            </div>
+            <div class="slds-col slds-text-align--left">
+                <button class="slds-button">
+                    <lightning:icon iconName="action:call" size="normal" />
+                </button>
+            </div>
+        </div>
+        
+    </div>
+</aura:component>

@@ -1,0 +1,78 @@
+.THIS {
+    background-color: #0A2073;
+    height: 96px;
+}
+
+.THIS .slds-global-header_container {
+	position: unset;
+}
+
+.THIS .slds-global-header {
+    background: #0A2073;
+    height: unset;
+}
+
+.THIS .menu-icon-0 {
+    background-image: url('/resource/bauern_top_nav_icons/menu-icon-0.png');   
+}
+
+.THIS .menu-icon-1 {
+    background-image: url('/resource/bauern_top_nav_icons/menu-icon-1.png');   
+}
+
+.THIS .menu-icon-2 {
+    background-image: url('/resource/bauern_top_nav_icons/menu-icon-2.png');   
+}
+
+.THIS .menu-icon-3 {
+    background-image: url('/resource/bauern_top_nav_icons/menu-icon-3.png');   
+}
+
+.THIS .menu-icon {
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 5rem;
+}
+
+.THIS .menu-inactive {
+    color:#FFFFFF;
+}
+
+.THIS .menu-active {
+    color:#bbbbbb;
+}
+
+.cBauernTopNavigation.top-menu {
+    margin-left: -1rem;    
+}
+
+.THIS .badge {
+    position:relative;
+}
+.THIS .badge[data-badge]:after {
+    content:attr(data-badge);
+    position:absolute;
+    top: -2.5rem;
+    right: -0.75rem;
+    font-size:.7em;
+    background:#e01933;
+    color:white;
+    width:18px;height:18px;
+    text-align:center;
+    line-height:18px;
+    border-radius:50%;
+}
+
+.THIS .badge-no-text[data-badge]:after {
+    content:attr(data-badge);
+    position:absolute;
+    top: 1rem;
+    right: 3.5rem;
+    font-size:.7em;
+    background:#e01933;
+    color:white;
+    width:18px;height:18px;
+    text-align:center;
+    line-height:18px;
+    border-radius:50%;
+}

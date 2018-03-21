@@ -1,0 +1,15 @@
+<aura:component >
+    <aura:attribute name="selectedAlertSection" type="String" default="all"/>
+
+    <div class="slds-grid">
+		<div class="slds-col slds-align_absolute-center">
+            <button class="{! 'slds-button' + ' ' + (v.selectedAlertSection == 'all' ? 'selected' : '')}" onclick="{!c.selectAll}">All</button>
+        </div>
+        <div class="slds-col slds-align_absolute-center">
+            <button class="{! 'slds-button' + ' ' + (v.selectedAlertSection == 'todo' ? 'selected' : '')}" onclick="{!c.selectTodo}">To Do</button>
+        </div>
+        <div class="slds-col slds-align_absolute-center">
+            <button class="{! 'slds-button' + ' ' + (v.selectedAlertSection == 'overdue' ? 'selected' : '')}" onclick="{!c.selectOverdue}">Overdue</button>
+        </div>
+	</div>
+</aura:component>

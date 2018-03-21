@@ -1,0 +1,21 @@
+<aura:component >
+    <aura:attribute name="selectedAlertSection" type="String" default="all"/>
+    <aura:attribute name="selectedAlertOrder" type="String" default="" />
+    <aura:attribute name="selectedAlertSearch" type="String" default="" />
+    <aura:attribute name="selectedAlertItem" type="Object" />
+    <aura:attribute name="isListView" type="Boolean" default="true" />    
+    
+    <aura:handler event="c:bauernAlertItemSelectionEvt" action="{!c.handleAlertItemSelectionEvent}"/>
+    
+    <aura:if isTrue="{!v.isListView}">
+        <c:bauernTopNavigation />
+        <c:bauernAlertSection selectedAlertSection="{!v.selectedAlertSection}" />
+        <c:bauernAlertSearchSort selectedAlertOrder="{!v.selectedAlertOrder}" selectedAlertSearch="{!v.selectedAlertSearch}" />
+        <c:BauernItemsList selectedAlertSection="{!v.selectedAlertSection}" selectedAlertOrder="{!v.selectedAlertOrder}" selectedAlertSearch="{!v.selectedAlertSearch}" selectedAlertItem="{!selectedAlertItem}"/>
+        <aura:set attribute="else">
+            <c:bauernAlertDetail alertItem="{!v.selectedAlertItem}"/>
+        </aura:set>
+    </aura:if>
+    
+    <c:bauernBottomNavigation />
+</aura:component>

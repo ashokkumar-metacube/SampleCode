@@ -1,0 +1,31 @@
+<aura:component >
+	<!-- ATTRIBUTES -->
+	<!-- Added a default values just for demo purposes -->
+	<aura:attribute name="itemsList" type="List" description="List of items to display." default="[
+																							  {'Subject':'Action Overdue','OwnerName':'James Harisson','AccountNumber':'A799 023 841','BalanceDue':12.34,'DueDate':'Today','IconName':'alert-re.png'},
+																							  {'Subject':'Policy Cancellation','OwnerName':'David Barker','AccountNumber':'A799 023 842','BalanceDue':12.34,'DueDate':'Today','IconName':'alert-re.png'},
+																							  {'Subject':'Process Claim','OwnerName':'Bertie Roberts','AccountNumber':'A799 023 843','BalanceDue':12.34,'DueDate':'Aug 21, 2017','IconName':'alert-blue.png'},
+																							  {'Subject':'Contact Customer','OwnerName':'Sophia Ryan','AccountNumber':'A799 023 844','BalanceDue':12.34,'DueDate':'Aug 21, 2017','IconName':'alert-blue.png'},
+																							  {'Subject':'New Customer Regis..','OwnerName':'Clark Wagner','AccountNumber':'A799 023 845','BalanceDue':12.34,'DueDate':'Completed','IconName':'alert-gray.png'},
+																							  {'Subject':'Call Customer','OwnerName':'Lola Reynolds','AccountNumber':'A799 023 846','BalanceDue':12.34,'DueDate':'Completed','IconName':'alert-gray.png'}
+																							]" />
+    <aura:attribute name="selectedAlertSection" type="String" />
+    <aura:attribute name="selectedAlertSearch" type="String" />
+    <aura:attribute name="selectedAlertOrder" type="String" />
+    <aura:attribute name="selectedAlertItem" type="Object" />
+    <!-- ATTRIBUTES -->
+
+    <aura:registerEvent name="alertItemSelectionEvent" type="c:bauernAlertItemSelectionEvt"/>
+    
+    <aura:handler name="change" value="{!v.selectedAlertSection}" action="{!c.sectionChanged}"/>
+    <aura:handler name="change" value="{!v.selectedAlertSearch}" action="{!c.searchChanged}"/>
+    <aura:handler name="change" value="{!v.selectedAlertOrder}" action="{!c.orderChanged}"/>
+    
+	<!-- COMPONENT BODY -->
+	<aura:iteration items="{!v.itemsList}" var="item" indexVar="index">
+        <div onclick="{!c.selectItem}" id="{!index}">
+     		<c:BauernItem Subject="{!item.Subject}" OwnerName="{!item.OwnerName}" DueDate="{!item.DueDate}" IconName="{!item.IconName}" />
+        </div>
+	</aura:iteration>
+	<!-- COMPONENT BODY -->
+</aura:component>

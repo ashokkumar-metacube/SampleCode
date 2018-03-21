@@ -1,0 +1,9 @@
+<aura:component >
+    <aura:attribute name="itemNumber" type="Integer" default="0" />
+    <aura:registerEvent name="bauernTopNavEvt" type="c:bauernTopNavEvt" />
+
+    <div class="menu-item" onclick="{!c.handleClick}">
+        <span class="{!'menu-icon-' + v.itemNumber + ' slds-align_absolute-center  menu-icon'}">
+        </span>
+    </div>
+</aura:component>

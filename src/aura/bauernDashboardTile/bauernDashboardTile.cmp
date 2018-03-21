@@ -1,0 +1,23 @@
+<aura:component >
+    <aura:attribute name="unsolvedCount" type="Integer" default="4"/>
+    <aura:attribute name="title1" type="String" default="Warnings"/>
+    <aura:attribute name="solvedCount" type="Integer" default="10"/>
+    <aura:attribute name="title2" type="String" default="Critical Alerts"/>
+ 
+  <div class="slds-card">
+        <div class="slds-card__body">
+            <div class="unsolved">
+              <ui:outputNumber value="{!v.unsolvedCount}"/>
+            </div>
+            <div calss="type">
+              <ui:outputText value="{!v.title1}"/>
+            </div>
+            <div class="solved">
+              <ui:outputText value="{!v.solvedCount}"/> solved
+          </div>
+        </div>
+        <footer class="slds-card__footer">
+            <ui:outputText value="{!v.title2}"/>
+        </footer>
+    </div>
+</aura:component>

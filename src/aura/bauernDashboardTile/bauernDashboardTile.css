@@ -1,0 +1,29 @@
+.THIS.slds-card {
+    text-align: center;
+    margin: 20px;
+    background-color: white;
+}
+
+.THIS .unsolved {
+    color: red;
+    font-size: 2em;
+    font-weight: bold;
+  padding: 10px 0;
+}
+
+.THIS .type {
+  font-weight: bold;
+  padding: 10px 0;
+}
+
+.THIS .solved {
+    color: gray;
+    padding: 10px 0;
+}
+
+.THIS footer {
+  text-align: center;
+    background-color: red;
+  padding: 10px 0;
+    color: white;
+}

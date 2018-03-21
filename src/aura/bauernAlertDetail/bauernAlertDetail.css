@@ -1,0 +1,94 @@
+.THIS {
+}
+
+.THIS .top-bar {
+    background-color: #0A2073;
+    color: white;
+}
+
+.THIS .top-bar .slds-icon-text-default {
+	fill: white;
+}
+
+.THIS .top-bar .left {
+    text-align: left;
+    margin: 1em;
+}
+
+.THIS .top-bar .center {
+    text-align: center;
+    background-color: unset;
+}
+
+.THIS .top-bar .title {
+    font-size: 1.4em;
+    padding-top: 0.3em;
+}
+
+.THIS .top-bar .name {
+	font-weight: lighter;
+}
+
+.THIS .subject {
+    background-color: #f2f2f2;
+    font-size: 1.3em;
+    padding: 0.8em;
+    font-weight: bold;
+}
+
+.THIS .profile {
+    background-color: #f8f8f8;
+    border-bottom: 0.1em solid #e3e3e3; 
+}
+
+.THIS .profile .image {
+    padding: 1.3em;
+}
+
+.THIS .profile .name {
+    padding-top: 1em;
+    font-weight: bold;
+}
+
+.THIS .profile .account-number {
+	color: #316D9D;
+}
+
+.THIS .detail {
+    padding: 1em;
+    border-bottom: 0.1em solid #e3e3e3;
+}
+
+.THIS .detail .description {
+ 	text-align: right;   
+}
+
+.THIS .detail.action-required .description {
+	color: red;
+}
+
+.THIS .detail.balance-due .description {
+	color: red;
+}
+
+.THIS .detail.due-date .description {
+	color: red;
+}
+
+.THIS .controls {
+    padding-top: 4em;
+}
+
+.THIS .controls button {
+    margin: 2em;
+}
+
+.THIS .controls .slds-icon-action-email {
+    padding: 1.3em;
+    background-color: #2fa859;
+}
+
+.THIS .controls .slds-icon-action-call {
+    padding: 1.3em;    
+    background-color: #0d5cc3;
+}

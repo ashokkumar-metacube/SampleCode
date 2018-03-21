@@ -1,0 +1,82 @@
+<aura:component controller="CustomerListController">
+	<!-- ATTRIBUTES -->
+	<aura:attribute name="customersList" type="List" description="List of customers to display." default="[]" />
+	<!-- ATTRIBUTES -->
+	<!-- HANDLERS -->
+	<aura:handler name="init" value="{!this}" action="{!c.fetchCustomers}" />
+	<!-- HANDLERS -->
+
+	<!-- COMPONENT BODY -->
+	<div class="cCustomerList">
+		<!-- Legend -->
+		<lightning:layout horizontalAlign="spread" verticalAlign="center" >
+	        <lightning:layoutItem >
+	        	<div class="slds-grid slds-grid_vertical-align-center" >
+	        		<div>
+	        			<img alt="Active" src="/resource/Customer_List_Icons/Images/active.png" title="Active" />
+	        		</div>
+	        		<div>
+	        			<ui:outputText class="cCustomerStatus" value="Active" />
+	        		</div>
+	        	</div>
+	        </lightning:layoutItem>
+	        <lightning:layoutItem >
+	        	<div class="slds-grid slds-grid_vertical-align-center" >
+	        		<div>
+	        			<img alt="Prospective" src="/resource/Customer_List_Icons/Images/prospective.png" title="prospective" />
+	        		</div>
+	        		<div>
+	        			<ui:outputText class="cCustomerStatus" value="Prospective" />
+	        		</div>
+	        	</div>
+	        </lightning:layoutItem>
+	        <lightning:layoutItem >
+	        	<div class="slds-grid slds-grid_vertical-align-center" >
+	        		<div>
+	        			<img alt="Lead" src="/resource/Customer_List_Icons/Images/lead.png" title="Lead" />
+	        		</div>
+	        		<div>
+	        			<ui:outputText class="cCustomerStatus" value="Lead" />
+	        		</div>
+	        	</div>
+	        </lightning:layoutItem>
+	    </lightning:layout>
+	    
+	    <br />
+	    <!-- Actual List -->
+	    <aura:iteration items="{!v.customersList}" var="item" >
+	    	<div class="cCustomerItem">
+			    <div class="slds-media slds-media_center">
+			    	<div class="{!'c'+item.Status__c}" >
+	    				&nbsp;
+	    			</div>
+			        <div class="slds-media__figure cMediaFigure">
+			            <span class="slds-avatar slds-avatar_large cCustomerIcon">
+			            	<img alt="Customer" src="/resource/1503588101000/Avatar" title="Customer" />
+			            </span>
+			        </div>
+			        <div class="slds-media__body">
+				        <div class="slds-grid slds-grid_align-spread slds-has-flexi-truncate">
+	                        <ui:outputText class="cCustomerName" value="{!item.Name__c}" />
+	                    </div>
+	                    <p class="slds-text-body_regular">
+	                    	<div class="slds-grid slds-grid_vertical-align-center" >
+	                    		<div>
+	                    			<p class="slds-truncate" >
+	                    				<span class="cCustomerEmail">{!item.Email__c}</span>
+	                    				<aura:if isTrue="{!item.Phone__c != null}" >
+			                        		&nbsp;<div class="circle" />
+			                        	</aura:if>
+	                    				<span class="cCustomerPhone">{!item.Phone__c}</span>
+	                    			</p>
+	                    		</div>
+	                    	</div>
+	                    </p>
+               	 	</div>
+			    </div>
+			</div>
+			<br />
+	    </aura:iteration>
+	</div>
+	<!-- COMPONENT BODY -->
+</aura:component>

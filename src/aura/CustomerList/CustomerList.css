@@ -1,0 +1,55 @@
+.THIS.cCustomerList{
+	margin:1rem 2rem 0rem 1rem;
+}
+.THIS .cMediaFigure{
+	padding-left:0.4rem;
+}
+.THIS .cCustomerItem{
+	border: 1px solid #d8dde6;
+}
+.THIS .cCustomerName{
+	font-weight:bold;
+	font-size:13pt;
+	white-space:nowrap;
+	overflow:hidden;
+}
+.THIS .cCustomerStatus{
+	padding-left:0.5rem;
+}
+.THIS .cCustomerEmail{
+	color:#71ccfc;
+}
+.THIS .cCustomerPhone{
+	color :#bbbbbb;
+	padding-left:0.25rem;
+}
+.THIS .circle{
+	border-radius: 50%;
+	width: 5px;
+	height: 5px;
+	background :#bbbbbb;
+	display:inline-block;
+	margin-bottom:0.2rem;
+}
+.THIS .cCustomerIcon{
+	border-radius:50%;
+}
+
+.THIS .cActive{
+	background-color:#1175CC;
+	min-width:0.75rem;
+	width:0.75rem;
+	height: 5rem;
+}
+.THIS .cLead{
+	background-color:#FD9834;
+	min-width:0.75rem;
+	width:0.75rem;
+	height: 5rem;
+}
+.THIS .cProspective{
+	background-color:#3DB06E;
+	min-width:0.75rem;
+	width:0.75rem;
+	height: 5rem;
+}

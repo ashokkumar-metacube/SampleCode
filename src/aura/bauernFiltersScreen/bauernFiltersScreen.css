@@ -1,0 +1,104 @@
+.THIS {
+    background-color : #F5F5F5;
+    width: 100vw;
+    height: 100vh;
+}
+
+.THIS .filters-footer {
+    position:fixed;
+    bottom:0px;
+    width:100%;
+}
+
+.THIS .clear-filter {
+    background-color: #BABABA;
+    color: #FFFFFF !important;
+}
+
+.THIS .clear-filter:hover,.THIS .clear-filter:active,.THIS .clear-filter:focus {
+    background-color: #909090;
+}
+
+.THIS .filter-close-icon {
+    position: absolute;
+    top:0;
+    right:0;
+    cursor:pointer;
+}
+
+.THIS .filter-container {
+    background-color: white;
+}
+
+.THIS .filter-close-icon svg {
+    fill: #C3C4C3;
+}
+
+.THIS .filter-heading-text {
+    color: #000000;
+    font-weight: 600;
+}
+
+.THIS .filter-subheading-text {
+    color: #727272;
+    font-weight: 600;
+}
+
+.THIS .filter-keyword-input {
+    background-color: white;
+}
+
+.THIS .filter-view-options li {
+    color: #9B9B9B;
+    cursor:pointer;
+    font-weight: 800;
+}
+
+.THIS .filter-toggle .slds-checkbox--on,.THIS .filter-toggle .slds-checkbox--off {
+    display: none !important;
+}
+
+.THIS .highlightItem {
+    color: #0334C4 !important;
+}
+
+.THIS .categoryType {
+    color: black;
+    font-weight: bold;
+}
+
+.THIS .slider-value {
+    color: grey;
+    font-weight: 600;
+}
+
+.THIS #filterRange {
+	min-width: 100px;
+	height: 4px;
+    padding-bottom: 0;
+	border: none;
+	border-radius: 100px;
+	background: #dedede;
+	outline: none;
+}
+
+.THIS #filterRange .ui-slider-handle {
+	position: absolute;
+	margin: -8px 0 0 -15px;
+	border-radius: 100px;
+	background: #000;
+	height: 30px;
+	width: 30px;
+	outline: none;
+	cursor: pointer;
+	transition: transform 0.1s ease;
+}
+
+.THIS #filterRange .ui-slider-handle:hover,
+.THIS #filterRange .ui-slider-handle:focus {
+	transform: scale(1.1);
+}
+
+.THIS #filterRange .ui-slider-range {
+	background: #27d;
+}

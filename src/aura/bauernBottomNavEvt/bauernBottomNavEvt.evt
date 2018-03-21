@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION" description="Bottom navigation event">
+    
+    <aura:attribute name="data" type="Object" default="{}"/>
+</aura:event>

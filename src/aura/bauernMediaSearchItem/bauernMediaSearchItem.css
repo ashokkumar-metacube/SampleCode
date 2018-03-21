@@ -1,0 +1,16 @@
+.THIS {
+    cursor: pointer;
+}
+
+.THIS:hover .media-search-item-name,.THIS:hover .media-search-item-type{
+     font-weight: 600;
+}
+
+.THIS .media-search-item-name {
+    color: #333333;
+    font-weight: 500;
+}
+
+.THIS .media-search-item-type {
+    color: #AAAAAA;
+}

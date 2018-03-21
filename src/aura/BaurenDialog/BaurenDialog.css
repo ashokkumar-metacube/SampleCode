@@ -1,0 +1,19 @@
+.THIS .cModalBody{
+	background-color:#DD1E39;
+}
+.THIS .cModalTitle{
+	color:#ffffff;
+	font-weight:bold;
+}
+.THIS .cModalBody{
+	color:#ffffff;
+	padding-top:0.4rem;
+}
+.THIS .cModalFooter{
+	color:#bbbbbb;
+	padding-top:0.4rem;
+}
+.THIS .cIgnoreButton{
+	color :#ffffff;
+	background-color:#bbbbbb;
+}

@@ -1,0 +1,31 @@
+<aura:component >
+    <aura:attribute name="activeButton" type="Integer" default="0" />
+    <aura:handler event="c:bauernTopNavEvt" action="{!c.handleNavItemEvent}" />
+
+
+    <div class="slds">
+        <header class="slds-global-header_container">
+            <div class="slds-global-header slds-grid slds-grid_align-spread">
+                <div class="slds-size_1-of-8">
+                    <!-- Icons on the left -->
+                    <c:bauernTopNavMenuItem itemNumber="0" aura:id="navItem" />
+                </div>
+                <div class="icon-space slds-size_3-of-4">
+                    <!-- Icons in the middle -->
+                    <c:bauernTopNavMenuItem itemNumber="1" aura:id="navItem" />
+                </div>
+                <div class="slds-size_1-of-8">
+                    <!-- Icons on the right -->
+                    <div class=" slds-grid slds-grid_align-spread">
+                        <div class="slds-size_1-of-2">
+                            <c:bauernTopNavMenuItem itemNumber="2" aura:id="navItem" />
+                        </div>
+                        <div class="slds-size_1-of-2">
+                            <c:bauernTopNavMenuItem itemNumber="3" aura:id="navItem" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+</aura:component>

@@ -1,0 +1,113 @@
+.THIS {
+    background-color: #fefefe;
+    max-width: 1024px;
+}
+
+.THIS.bottom-menu {
+    
+    position: absolute;
+    bottom: 0rem;
+    color:#bbbbbb;
+    background-color: #fefefe;
+}
+
+.THIS .menu-icon-0_inactive {
+    background-image: url('/resource/bauern_bottom_nav_icons/menu-icon-0-inactive.svg');   
+}
+
+.THIS .menu-icon-0_active {
+    background-image: url('/resource/bauern_bottom_nav_icons/menu-icon-0-active.svg');
+}
+
+.THIS .menu-icon-1_inactive {
+    background-image: url('/resource/bauern_bottom_nav_icons/menu-icon-1-inactive.svg');   
+}
+
+.THIS .menu-icon-1_active {
+    background-image: url('/resource/bauern_bottom_nav_icons/menu-icon-1-active.svg');
+}
+
+.THIS .menu-icon-2_inactive {
+    background-image: url('/resource/bauern_bottom_nav_icons/menu-icon-2-inactive.svg');   
+}
+
+.THIS .menu-icon-2_active {
+    background-image: url('/resource/bauern_bottom_nav_icons/menu-icon-2-active.svg');
+}
+
+.THIS .menu-icon-3_inactive {
+    background-image: url('/resource/bauern_bottom_nav_icons/menu-icon-3-inactive.svg');   
+}
+
+.THIS .menu-icon-3_active {
+    background-image: url('/resource/bauern_bottom_nav_icons/menu-icon-3-active.svg');
+}
+
+.THIS .menu-icon-4_inactive {
+    background-image: url('/resource/bauern_bottom_nav_icons/menu-icon-4-inactive.svg');   
+}
+
+.THIS .menu-icon-4_active {
+    background-image: url('/resource/bauern_bottom_nav_icons/menu-icon-4-active.svg');
+}
+
+.THIS .menu-icon-5_inactive {
+    background-image: url('/resource/bauern_bottom_nav_icons/menu-icon-5-inactive.svg');   
+}
+
+.THIS .menu-icon-5_active {
+    background-image: url('/resource/bauern_bottom_nav_icons/menu-icon-5-active.svg');
+}
+
+.THIS .menu-icon {
+    background-repeat: no-repeat;
+    background-position: center; 
+    height: 2rem;
+}
+
+.THIS .menu-item {
+    
+}
+
+.THIS .menu-inactive {
+    color:#bbbbbb;
+}
+
+.THIS .menu-active {
+    color:#003087;
+}
+
+.cBauernBottomNavigation.bottom-menu {
+    margin-left: -1rem;    
+}
+
+.THIS .badge {
+    position:relative;
+}
+.THIS .badge[data-badge]:after {
+    content:attr(data-badge);
+    position:absolute;
+    top: -2.5rem;
+    right: -0.75rem;
+    font-size:.7em;
+    background:#e01933;
+    color:white;
+    width:18px;height:18px;
+    text-align:center;
+    line-height:18px;
+    border-radius:50%;
+}
+
+.THIS .badge-no-text[data-badge]:after {
+    content:attr(data-badge);
+    position:absolute;
+    top: 1rem;
+    right: 3.5rem;
+    font-size:.7em;
+    background:#e01933;
+    color:white;
+    width:18px;height:18px;
+    text-align:center;
+    line-height:18px;
+    border-radius:50%;
+}

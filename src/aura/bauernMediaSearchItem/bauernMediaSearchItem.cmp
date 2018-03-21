@@ -1,0 +1,14 @@
+<aura:component >
+    <aura:attribute name="searchItemName" type="String" default=""/>
+    <aura:attribute name="searchItemType" type="String" default="" />
+    <aura:registerEvent name="MediaSearchItem" type="c:bauernMediaSearchItemClickedEvt" />
+    
+    <div class="slds-clearfix slds-p-vertical_small " onclick="{!c.mediaSearchItemClicked}">
+        <div class="slds-float_left">
+            <p class="media-search-item-name">{!v.searchItemName}</p>
+        </div>
+        <div class="slds-float_right slds-p-right_x-small">
+            <p class="media-search-item-type">{!v.searchItemType}</p>
+        </div>
+    </div>
+</aura:component>

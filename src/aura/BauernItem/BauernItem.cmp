@@ -1,0 +1,36 @@
+<aura:component >
+	<!-- ATTRIBUTES -->
+	<aura:attribute name="Subject" type="String"  />
+	<aura:attribute name="OwnerName" type="String"  />
+	<aura:attribute name="DueDate" type="String"  />
+	<aura:attribute name="IconName" type="String"  />
+	<!-- ATTRIBUTES -->
+	
+	<!-- COMPONENT BODY -->
+    <div class="slds-media slds-media_center cItem">
+        <div class="slds-media__figure">
+            <span class="slds-avatar slds-avatar_large">
+            	<img alt="Item" src="{!'/resource/List_Item_Icons/Images/'+v.IconName}" title="User avatar" />
+            </span>
+        </div>
+        <div class="slds-media__body">
+          	<lightning:layout horizontalAlign="spread">
+	            <lightning:layoutItem >
+	                <ui:outputText class="cSubject" value="{!v.Subject}" />
+	            </lightning:layoutItem>
+	            <lightning:layoutItem class="slds-grid--align-end" >
+	                <ui:outputText class="slds-p-right_x-small" value="Due Date" />
+	            </lightning:layoutItem>
+	        </lightning:layout>
+	        <lightning:layout horizontalAlign="spread">
+	        	<lightning:layoutItem >
+	               	<ui:outputText class="cOwnerName" value="{!v.OwnerName}" />
+	            </lightning:layoutItem>
+	            <lightning:layoutItem class="slds-grid--align-end" >
+	                <ui:outputText class="{!'slds-p-right_x-small '+(v.DueDate == 'Today' ? 'cDueDateColor' : '')}" value="{!v.DueDate}" />
+	            </lightning:layoutItem>
+	        </lightning:layout>
+        </div>
+    </div>
+	<!-- COMPONENT BODY -->
+</aura:component>

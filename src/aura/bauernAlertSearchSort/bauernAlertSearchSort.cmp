@@ -1,0 +1,30 @@
+<aura:component >
+	<aura:attribute name="selectedAlertSearch" type="String" />
+    <aura:attribute name="selectedAlertOrder" type="String" />
+    <aura:attribute name="searchMode" type="Boolean" default="false" />
+    
+    <div class="slds-grid">
+        <div class="slds-col search">
+            <aura:if isTrue="{!v.searchMode}">
+            	<div class="slds-form-element">
+                    <div class="slds-form-element__control">
+                        <ui:inputText value="{!v.selectedAlertSearch}" updateOn="keyup" />
+                        <button class="slds-button" onclick="{!c.searchModeOff}">
+	        	            <lightning:icon iconName="utility:close" size="normal" />
+    		            </button>
+                    </div>
+                                    
+                </div>
+                <aura:set attribute="else">
+                    <button class="slds-button" onclick="{!c.searchModeOn}">
+                        <lightning:icon iconName="utility:search" size="normal" />
+                    </button>
+                </aura:set>
+            </aura:if>
+        </div>
+        <div class="slds-col sort">
+            <button class="slds-button" onclick="{!c.sortByDate}">Sort by due date</button>
+        </div>
+        
+    </div>
+</aura:component>

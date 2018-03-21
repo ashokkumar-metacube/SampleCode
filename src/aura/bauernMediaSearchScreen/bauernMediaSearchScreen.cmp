@@ -1,0 +1,36 @@
+<aura:component >
+    
+    <aura:attribute name="searchInput" type="String" default=""/>
+    <aura:attribute name="searchTextprediction" type="String" default=""/>
+    <aura:attribute name="searchResults" type="Object[]" />
+    <aura:registerEvent name="MediaQueryUpdated" type="c:bauernMediaSearchQueryUpdatedEvt" />
+    
+    <div class="">
+        <div class="">
+            <div class="slds-form-element__control media-search-input-container">
+                <lightning:icon class="slds-p-top_x_small slds-p-left_medium search-icon" iconName="utility:search" variant="default"/>
+                <ui:inputText aura:id="searchInput" value="{!v.searchInput}" class="slds-input slds-p-left_xx-large slds-p-vertical_x-small slds-p-right_xx-large slds-input_bare media-search-input"
+                              keyup="{!c.performSearch}" updateOn="keyup" placeholder="Search for Media"/>
+                <p class="slds-input slds-p-left_xx-large slds-p-vertical_x-small slds-p-right_xx-large .slds-input_height media-search-input-mask">
+                {!v.searchInput}
+                    <aura:if isTrue="{!v.searchInput!=''}">
+                    	<span>{!v.searchTextprediction}</span>
+                    </aura:if>
+                </p>
+                <aura:if isTrue="{!v.searchInput!=''}">
+                    <p id="media-search-cancel" class="slds-p-top_medium slds-p-right_medium media-search-cancel" onclick="{!c.mediaSearchCancel}">Cancel</p>
+                </aura:if>
+            </div>
+            <aura:if isTrue="{!v.searchInput!=''}">
+                <h1 class="slds-p-top_medium slds-m-horizontal_small" id="recent-search-p">RECENT SEARCHES</h1>
+                <ul id="media-search-results" class="slds-has-dividers_bottom-space slds-m-left_small">
+                    <aura:iteration items="{!v.searchResults}" var="result" indexVar="index">
+                        <li class="slds-item slds-p-left_none">
+                            <c:bauernMediaSearchItem searchItemName="{!result.itemName}" searchItemType="{!result.itemType}"/>
+                        </li>
+                    </aura:iteration>
+                </ul>
+            </aura:if>
+        </div>
+    </div>
+</aura:component>
